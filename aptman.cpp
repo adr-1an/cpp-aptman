@@ -25,7 +25,6 @@ int main()
             std::cout << "Starting package installation" << std::endl;
             std::string systemCommand = "sudo apt-get -y --no-install-recommends --no-reinstall install "+ packageName;
             system(systemCommand.c_str());
-            system("clear");
             std::cout << "+++   Finished package installation   +++" << std::endl;
         }
         else if (option == 2)
@@ -36,7 +35,6 @@ int main()
             std::cout << "Starting package removal" << std::endl;
             std::string systemCommand = "sudo apt remove -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' "+ packageName;
             system(systemCommand.c_str());
-            system("clear");
             std::cout << "+++   Finished package removal   +++" << std::endl;
         }
         else if (option == 3)
@@ -47,7 +45,6 @@ int main()
             std::cout << "Starting package purge" << std::endl;
             std::string systemCommand = "sudo apt purge -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' "+ packageName;
             system(systemCommand.c_str());
-            system("clear");
             std::cout << "+++   Finished package purge   +++" << std::endl;
         }
         else if (option == 4)
@@ -59,23 +56,23 @@ int main()
         {
             std::cout << "Starting package upgrade" << std::endl;
             system("sudo apt upgrade -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold'");
-            system("clear");
-            std::cout << "Finished upgrading packages." << std::endl;
+            std::cout << "+++   Finished upgrading packages.   +++" << std::endl;
         }
         else if (option == 6)
         {
             std::cout << "Starting full upgrade" << std::endl;
             system("sudo apt full-upgrade -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold'");
-            system("clear");
-            std::cout << "Finished full upgrade" << std::endl;
+            std::cout << "+++   Finished full upgrade   +++" << std::endl;
         }
         else if (option == 7)
         {
             std::cout << "Starting package update" << std::endl;
             system("sudo apt update -y");
+            std::cout << "+++   Finished package update   +++" << std::endl;
         }
         else if (option == 0)
         {
+            std::cout << "Exit" << std::endl;
             return 0;
         }
         else
